@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Budgeter</title>
+    
+    <script async type="application/dart" src="budgeter.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+    
+    <link rel="stylesheet" href="budgeter.css">
+  </head>
+  <body>
+    <h1>Budgeter</h1>
+    
+
+    <div budget-table>
+    <h3>Budget Table</h3>
+    <table>
+      <tr>
+        <th>Category</th>
+      </tr>
+      <tr ng-repeat="category in ctrl.categories">
+        <td>{{ category.name }}</td>
+        <td>{{ category.getOutflow(1.0) }}
+        <td ng-repeat="transaction in category.loadedTransactions">{{ transaction.id }}</td>
+      </tr>   
+    </table>
+  
+    
+  </body>
+</html>
