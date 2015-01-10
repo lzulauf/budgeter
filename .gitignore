@@ -2,5 +2,4 @@
 /build
 /packages
 /web/packages
-*.pyc
 .pub
