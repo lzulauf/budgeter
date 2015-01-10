@@ -12,18 +12,23 @@ h1, p {
   color: #333;
 }
 
-#sample_container_id {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  border: 1px solid #ccc;
-  background-color: #fff;
+table {
+  border: 1px black solid;
+  padding: 10px;
 }
 
-#sample_text_id {
-  font-size: 24pt;
-  text-align: center;
-  margin-top: 140px;
-  -webkit-user-select: none;
-  user-select: none;
+table td,
+table th {
+  padding: 10px;
+}
+
+table tr:nth-child(even) {
+  background: #FFDDFF;
+}
+
+table .number {
+  text-align:right;
+}
+
+#add-transaction-row {
 }

@@ -3,8 +3,7 @@ class Transaction {
   String date;
   String payee;
   String description;
-  double outflow;
   double inflow;
   
-  Transaction(this.id, this.date, this.payee, this.description, this.outflow, this.inflow);
+  Transaction(this.id, this.date, this.payee, this.description, this.inflow);
 }

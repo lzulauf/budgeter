@@ -1,5 +1,5 @@
 name: Budgeter
 description: A sample web application
 dependencies:
-  angular: any
+  angular: '>=0.11.0 <0.12.0'
   browser: any

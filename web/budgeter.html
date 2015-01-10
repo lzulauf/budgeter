@@ -22,10 +22,16 @@
       </tr>
       <tr ng-repeat="category in ctrl.categories">
         <td>{{ category.name }}</td>
-        <td>{{ category.getOutflow(1.0) }}
-        <td ng-repeat="transaction in category.loadedTransactions">{{ transaction.id }}</td>
+        <td class="number">{{ category.getOutflow(1.0) }}
+        <td ng-repeat="transaction in category.loadedTransactions" class="number">{{ transaction.inflow }}</td>
       </tr>   
+      <tr id="add-transaction-row">
+        <td><input name="category">Category</input></td>
+        <td><input name="date">Date</input></td>
+      </tr>
     </table>
+    
+    <button id="add-transaction-button">Add Transaction</button>
   
     
   </body>

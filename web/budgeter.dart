@@ -1,5 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular/application_factory.dart';
+import 'dart:html';
 
 import "category.dart";
 
@@ -23,7 +24,13 @@ class MyAppModule extends Module {
   }
 }
 
+void showAddtransactionRow(MouseEvent event) {
+  querySelector("#add-transaction-row")
+      ..hidden = true;
+}
+
 void main() {
-  var mydata = ['a', 'b', 'c'];
+  querySelector("#add-transaction-button")
+    ..onClick.listen(showAddtransactionRow);
   applicationFactory()..addModule(new MyAppModule())..run();
 }

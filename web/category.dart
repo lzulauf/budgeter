@@ -26,8 +26,7 @@ class Category {
           '2014-06-27',
           'luke',
           'for stuff',
-          32.00,
-          0.00));
+          -rand.nextInt(1000) / 100.0));
     }
   }
 }
