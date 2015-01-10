@@ -1,12 +1,14 @@
-import 'package:angular/angular.dart';
+//import 'package:angular/angular.dart';
 import 'package:angular/application_factory.dart';
+import 'package:di/annotations.dart';
 import 'dart:html';
 
 import "category.dart";
 
-@Controller(
-    selector: '[budget-table]',
-    publishAs: 'ctrl')
+@Injectable()
+//@Controller()
+//    selector: '[budget-table]',
+//    publishAs: 'ctrl')
 class BudgetController {
   List<Category> categories;
   
@@ -18,19 +20,22 @@ class BudgetController {
   }
 }
 
-class MyAppModule extends Module {
-  MyAppModule() {
-    type(BudgetController);
-  }
-}
-
+//class MyAppModule extends Module {
+//  MyAppModule() {
+//    //type(BudgetController);
+//  }
+//}
+//
 void showAddtransactionRow(MouseEvent event) {
   querySelector("#add-transaction-row")
-      ..hidden = true;
+    ..hidden = false;
+  querySelector("#add-transaction-button")
+    ..hidden = true;
 }
 
 void main() {
   querySelector("#add-transaction-button")
     ..onClick.listen(showAddtransactionRow);
-  applicationFactory()..addModule(new MyAppModule())..run();
+  applicationFactory()..rootContextType(BudgetController)..run();
+//  applicationFactory()..addModule(new MyAppModule())..run();
 }

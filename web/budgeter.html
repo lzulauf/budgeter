@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Budgeter</title>
-    
-    <script async type="application/dart" src="budgeter.dart"></script>
-    <script async src="packages/browser/dart.js"></script>
-    
+    <title>Budgeter</title>   
     <link rel="stylesheet" href="budgeter.css">
   </head>
   <body>
@@ -16,16 +12,19 @@
 
     <div budget-table>
     <h3>Budget Table</h3>
+    <p ng-model="categories"></p>
     <table>
       <tr>
         <th>Category</th>
+        <th>Amount</th>
+        <th>Inflows</th>
       </tr>
-      <tr ng-repeat="category in ctrl.categories">
+      <tr ng-repeat="category in categories">
         <td>{{ category.name }}</td>
         <td class="number">{{ category.getOutflow(1.0) }}
         <td ng-repeat="transaction in category.loadedTransactions" class="number">{{ transaction.inflow }}</td>
       </tr>   
-      <tr id="add-transaction-row">
+      <tr id="add-transaction-row" hidden>
         <td><input name="category">Category</input></td>
         <td><input name="date">Date</input></td>
       </tr>
@@ -33,6 +32,9 @@
     
     <button id="add-transaction-button">Add Transaction</button>
   
-    
+  
+  
+    <script async type="application/dart" src="budgeter.dart"></script>
+    <script async type="text/javascript" src="packages/browser/dart.js"></script>
   </body>
 </html>
