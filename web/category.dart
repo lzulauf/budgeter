@@ -14,7 +14,11 @@ class Category {
   }
   
   double getOutflow(var month) {
-    return 10.0;
+    double total = 0.0;
+    for (var t in loadedTransactions) {
+      total += t.inflow;
+    }
+    return total;
   }
   
   void loadTransactions() {
@@ -26,7 +30,7 @@ class Category {
           '2014-06-27',
           'luke',
           'for stuff',
-          -rand.nextInt(1000) / 100.0));
+          -rand.nextInt(1000)));
     }
   }
 }

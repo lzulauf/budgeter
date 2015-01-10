@@ -20,12 +20,6 @@ class BudgetController {
   }
 }
 
-//class MyAppModule extends Module {
-//  MyAppModule() {
-//    //type(BudgetController);
-//  }
-//}
-//
 void showAddtransactionRow(MouseEvent event) {
   querySelector("#add-transaction-row")
     ..hidden = false;

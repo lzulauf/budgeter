@@ -16,13 +16,13 @@
     <table>
       <tr>
         <th>Category</th>
-        <th>Amount</th>
-        <th>Inflows</th>
+        <th>Total</th>
+        <th>Transactions</th>
       </tr>
       <tr ng-repeat="category in categories">
         <td>{{ category.name }}</td>
-        <td class="number">{{ category.getOutflow(1.0) }}
-        <td ng-repeat="transaction in category.loadedTransactions" class="number">{{ transaction.inflow }}</td>
+        <td class="number">{{ (category.getOutflow(1)/100).toStringAsFixed(2) }}
+        <td ng-repeat="transaction in category.loadedTransactions" class="number">{{ transaction.amount() }}</td>
       </tr>   
       <tr id="add-transaction-row" hidden>
         <td><input name="category">Category</input></td>
